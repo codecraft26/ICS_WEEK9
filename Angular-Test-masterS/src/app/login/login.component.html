@@ -1,0 +1,20 @@
+
+<form (ngSubmit)="formSubmit()">
+  <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <input style="margin-left: 10px;" type="text" [(ngModel)]="loginData.username" name="username">
+    <div *ngIf="user" style="color: red;margin-left: 85px">Username is required</div>
+    <div style="margin-bottom: 15px;" ></div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <input style="margin-left: 20px;" type="password" [(ngModel)]="loginData.password" name="password">
+    <div *ngIf="pass" style="color: red;margin-left: 85px">Password is required</div>
+  </div>
+  <div *ngIf="wrong" style="color: red;">Invalid Credential</div>
+  <button style="margin-left: 130px;margin-top: 20px;background-color: rgb(3, 3, 247);" 
+     type="submit"> <span style="color: white;">
+     Login </span></button>
+</form>
+<hr>
+{{loginData | json}}
